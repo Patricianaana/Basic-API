@@ -1,0 +1,38 @@
+<html>
+<head>
+	<title>Client Test</title>
+</head>
+<body>
+<h1> Response from server </h1>
+
+<p> Name: <span id="name"></span> </p>
+<p>IsMale: <span id="isMale"> </span></p> 
+<p> Age: <span id="age"></span> </p>
+<p> Location: <span id="location"></span> </p>
+<p> Geo-Latitude: <span id="lat"></span> </p>
+<p> Geo-Longitude: <span id="lng"></span> </p>
+
+</body>
+<script>
+    //how the api will be used in front-end
+	fetch("http://localhost/basic-api/api/hello.php")//request
+	.then(response => {
+		//check if the response is ok(200)
+		// response.ok or response.status == 200
+		if (response.status == 200) {
+			return response.json()
+		}
+	})//callback
+	.then(data =>{
+		//data is the response from the server
+		console.log(data)
+		document.getElementById("name").innerHTML = data["name"] // or date.name
+		document.getElementById("age").innerHTML = data["age"] // or data.age
+		document.getElementById("isMale").innerHTML = data["isMale"] // or data.isMale
+		document.getElementById("location").innerHTML = data["location"] // or data.location
+		document.getElementById("lat").innerHTML = data["geolocation"]["lat"] // {"lat": "123", "lng": "123"}
+		document.getElementById("lng").innerHTML = data["geolocation"]["lng"] // {"lat": "123", "lng": "123"}
+
+	})
+	</script>
+</html>

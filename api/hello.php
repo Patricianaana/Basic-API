@@ -11,7 +11,7 @@ try {
 		$age = 20;
 		$isMale = false;
 		$location = ["Accra","Kumasi"];
-		$geolation = ["lat"=>5.55,"lng"=>-0.22]; // {"lat":5.55,"lng":-0.22}
+		$geolocation = ["lat"=>5.55,"lng"=>-0.22]; // {"lat":5.55,"lng":-0.22}
 
 		// Response status code
 		// 200 - OK
