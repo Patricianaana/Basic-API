@@ -1,0 +1,13 @@
+{
+
+	"name": "Naana",
+	"age": 20,
+	"isMale": false,
+	"location":["Kumasi","Accra"],
+	"geolocation": {
+		"latitude": 5.55,
+		"longitude": 0.22
+	}
+
+}
+
